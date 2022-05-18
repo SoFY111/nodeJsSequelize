@@ -1,0 +1,30 @@
+{
+  "name": "sqlz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "consola": "^2.15.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.16",
+    "passport": "^0.5.3",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.19.1",
+    "sequelize-auto": "^0.8.8",
+    "sequelize-cli": "^6.4.1"
+  }
+}

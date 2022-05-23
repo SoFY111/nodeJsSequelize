@@ -1,7 +1,22 @@
+/**
+ * @typedef SqReqs
+ * @property {integer} id 
+ * @property {string} firstName 
+ * @property {string} lastName 
+ * @property {string} email 
+ */
+
 import { success } from 'consola';
 import dbContext from '../models/index';
 
 //[GET] list all users
+/**
+ * @route GET /sq/
+ * @group sq/users
+ * @summary Kullanıcılır getirir.
+ * @returns {object} 200 - Success message 
+ * @returns {Error} default - Unexpected error 
+ */
 const getUsers = (req, res) => {
 	try {
 		dbContext.User.findAll().then((rows) => {
@@ -10,8 +25,7 @@ const getUsers = (req, res) => {
 				userss.id = r.dataValues.id;
 				userss.fullName = r.dataValues.firstName + ' ' + r.dataValues.lastName;
 				userss.email = r.dataValues.email;
-				userss.id = 1;
-				userss.id = 1;
+				
 				return userss;
 			}));
 		});    
@@ -23,6 +37,14 @@ const getUsers = (req, res) => {
 };
 
 //[POST] create new user
+/**
+ * @route POST /sq/
+ * @group sq/users
+ * @summary Kullanıcı oluşturur.
+ * @param {SqReqs.model} body.body 
+ * @returns {object} 200 - Success message 
+ * @returns {Error} default - Unexpected error 
+ */
 const createUser = (req, res) => {
 	try {
 		if (!req.body.firstName || !req.body.lastName || !req.body.email)
@@ -47,6 +69,14 @@ const createUser = (req, res) => {
 };
 
 //[DELETE] delete user
+/**
+ * @route DELETE /sq/
+ * @group sq/users
+ * @summary Kullanıcı siler.
+ * @param {integer} id 
+ * @returns {object} 200 - Success message 
+ * @returns {Error} default - Unexpected error 
+ */
 const deleteUser = (req, res) => {
 	try {
 		dbContext.User.destroy({
@@ -65,6 +95,14 @@ const deleteUser = (req, res) => {
 };
 
 //[PUT] update user data
+/**
+ * @route PUT /sq/
+ * @group sq/users
+ * @summary Kullanıcı günceller.
+ * @param {SqReqs.model} body.body 
+ * @returns {object} 200 - Success message 
+ * @returns {Error} default - Unexpected error 
+ */
 const updateUser = (req, res) => {
 
 	try {

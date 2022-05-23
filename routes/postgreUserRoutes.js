@@ -1,6 +1,7 @@
-import db from '../utils/queries'
+import db from '../utils/queries';
+import express from 'express';
 
-const router = require('express').Router()
+const router = express();
 
 router.get('/users', db.getUsers);
 router.get('/users/:id', db.getUserById);
